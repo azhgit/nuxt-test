@@ -2,103 +2,29 @@
 export default {};
 </script>
 <template>
-  <footer>
-    <div>
-      <div class="left_box">
-        <h4>Mike Cheng</h4>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vehicula
-          ipsum non leo tristique eget facilisis lacus commodo. Curabitur vitae
-          justo lorem, non ornare nibh. Pellentesque pretium, tellus ac ultrices
-          faucibus, nibh mauris dapibus lorem, vitae viverra nisl elit sit amet
-          libero. Nam eu blandit risus.
-        </p>
-        <p>
-          Phasellus imperdiet mattis nulla. Integer gravida imperdiet congue.
-          Proin vitae pretium augue. Donec est sem, mattis et blandit ac,
-          blandit at arcu. Donec tempus tincidunt suscipit. Suspendisse eu
-          vulputate lacus.
-        </p>
+  <footer class="w-full text-xs md:text-base bg-neutral-800 text-zinc-100">
+    <div class="py-4 text-center">
+      <div>遊戲為免費使用，遊戲另提供購買虛擬遊戲幣、物品等付費服務</div>
+      <div class="mt-1">請注意遊玩時間避免沉迷，遊戲內容情節涉及棋牌益智及娛樂</div>
+      <div class="mt-1">本遊戲提供之機會中獎商品，消費者購買或參加活動不代表可獲得特定商品</div>
+      <div class="items-center justify-center hidden mt-1 sm:flex">
+        <p class="mt-1 sm:ml-4 sm:mt-0">例行維護 每周四09:00~12:00</p>
+        <p class="mt-1 sm:ml-4 sm:mt-0">信箱:7dd168@gmail.com</p>
+        <div class="hidden ml-5 sm:block"><img class="w-10" src="@/assets/images/18plus.png" /></div>
       </div>
-      <div class="right_box">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vehicula
-          ipsum non leo tristique eget facilisis lacus commodo. Curabitur vitae
-          justo lorem, non ornare nibh. Pellentesque pretium, tellus ac ultrices
-          faucibus, nibh mauris dapibus lorem, vitae viverra nisl elit sit amet
-          libero. Nam eu blandit risus.
-        </p>
-        <p>
-          Phasellus imperdiet mattis nulla. Integer gravida imperdiet congue.
-          Proin vitae pretium augue. Donec est sem, mattis et blandit ac,
-          blandit at arcu. Donec tempus tincidunt suscipit. Suspendisse eu
-          vulputate lacus.
-        </p>
+      <div class="flex items-center justify-center mt-1 sm:hidden">
+        <div>
+          <p class="">例行維護 每周四09:00~12:00</p>
+          <p class="">信箱:7dd168@gmail.com</p>
+        </div>
+        <div class="block ml-3"><img class="w-10" src="@/assets/images/18plus.png" /></div>
       </div>
+      <div class="mt-1">Copyright © 2021 WU MAR INTERNATIONAL ENTERPRISE CO.,LTD. ALL rights reserved</div>
+      <div class="mt-1">PAOKAI ELECTRONIC ENTERPRISE CO., LTD.</div>
     </div>
   </footer>
 </template>
 
 <style lang="scss" scoped>
-footer {
-  width: 100%;
-  height: 562px;
-  background-color: #ebebeb;
-  @media screen and (max-width: 640px) {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    background-color: #ebebeb;
-  }
-  > div {
-    width: 1024px;
-    height: 100%;
-    margin: 0 auto;
-    @media screen and (max-width: 1044px) {
-      width: 100%;
-    }
-  }
-}
-.left_box {
-  width: 50%;
-  height: 100%;
-  float: left;
-  padding-top: 3%;
-  @media screen and (max-width: 640px) {
-    width: 100%;
-    float: none;
-    padding-top: 0%;
-  }
-  > h4 {
-    color: #088ca5;
-    font-size: 30px;
-    padding: 15% 11% 3% 11%;
-    @media screen and (max-width: 640px) {
-      color: #088ca5;
-      font-size: 30px;
-      padding: 15% 11% 3% 11%;
-    }
-  }
-}
-.right_box {
-  width: 50%;
-  height: 100%;
-  float: right;
-  padding-top: 15.5%;
-  @media screen and (max-width: 640px) {
-    width: 100%;
-    float: none;
-    padding-top: 0%;
-  }
-}
 
-.left_box,
-.right_box {
-  > p {
-    color: #515151;
-    font-size: 14px;
-    padding: 20px 11%;
-    text-align: justify;
-  }
-}
 </style>

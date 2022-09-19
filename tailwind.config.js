@@ -9,6 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    backgroundImage: {
+      header: "url('/assets/images/testHeaderBg.jpg')",
+    },
   },
   plugins: [],
 };

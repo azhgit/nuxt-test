@@ -1,39 +1,26 @@
 <template>
-  <div>
-    <div class="container mx-auto bg-gray-300 p-8">
-      <h1 class="font-bold text-gray-600 text-lg">Hello, Tailwind 3!</h1>
-      <ul class="all_btn">
-        <li v-for="item in data" :key="item.url">
-          <img :src="item.url" alt />
-        </li>
-      </ul>
-      <NuxtLink to="/demo">Demo.vue</NuxtLink>
+  <div class="relative">
+    <div class="absolute top-0 left-0 z-20 w-full h-full bg-repeat opacity-25 body-bg"></div>
+    <div class="absolute top-0 left-0 z-10 w-full h-full body-bg2"></div>
+    <div class="container relative z-30 p-8 mx-auto border-2 border-white border-solid ">
+      <!-- <WinnerAnnouncement /> -->
+      <WinnerAnnouncement2 />
     </div>
   </div>
 </template>
 <script setup>
-const { data } = await useAsyncData("getList", () =>
-  $fetch("https://vue-lessons-api.herokuapp.com/photo/list")
-);
-console.log(data);
+
 </script>
 
-<style scoped lang="scss">
-.all_btn {
-  list-style: none;
-  margin: 0 auto;
-  padding: 0;
-  max-width: 1495px;
-  > li {
-    width: 30%;
-    max-width: 594px;
-    margin: 0px 5px;
-    display: inline-block;
-    @media (max-width: 768px) {
-      width: 40%;
-      // width: 45%;
-      // max-width: 150px;
-    }
-  }
+<style lang="scss" scoped>
+
+.body-bg{
+  background-image: url(@/assets/images/bg_texture.png);
+  background-size: 80px;
 }
+.body-bg2{
+  background-image: linear-gradient(to right, rgba(0,0,0,0.93) 0%,rgba(104,0,0,0.93) 25%,rgba(170,0,0,0.93) 50%,rgba(104,0,0,0.93) 74%,rgba(0,0,0,0.93) 100%);
+}
+
+
 </style>
