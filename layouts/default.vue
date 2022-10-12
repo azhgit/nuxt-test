@@ -2,7 +2,6 @@
   <div>
     <Header />
     <slot/>
-    <Footer/>
   </div>
 </template>
 <style lang="scss" scoped>
