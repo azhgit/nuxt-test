@@ -27,7 +27,7 @@
     </div>
   </div>
   <div class="flex text-center row justify-evenly">
-    <div v-for="item in data" :key="item.url" class="">
+    <div v-for="item in picList" :key="item.url" class="">
       <img :src="item.url" alt />
     </div>
   </div>
@@ -36,21 +36,26 @@
 <script setup>
   import Swiper, { Navigation, Autoplay } from 'swiper'
   Swiper.use([Navigation, Autoplay])
-  let currentSlide = ref({});
+  const currentSlide = ref({});
   let swiper = {};
   const { data:picList, pending } = await useAsyncData("getList", () =>
     $fetch("https://vue-lessons-api.herokuapp.com/photo/list")
   );
   onMounted(()=>{
-    //for testing... api must offer ID 
+    //for testing
     picList.value.forEach((item, index)=>{
       item.ID = index + 1
       item.name = `肥宅快樂水-${item.ID}`
     })
     currentSlide.value = picList.value[0];
+    initSwiper();
+    console.log(picList.value)
     console.log(swiper)
+    console.log('start')
+  });
+  function initSwiper(){   
     swiper = new Swiper('.swiper-container-test-announcement', {
-      // loop: true,
+      loop: false,
       autoplay: {
         delay: 3500,
         stopOnLastSlide: false,
@@ -66,10 +71,15 @@
           //console.log(swiper)
         },
       },
+      observer:true,
+      observeParents:true,
     });
-    console.log(picList.value)
-    console.log(swiper)
-  });
+    swiper.init();
+  }
+  onUnmounted(()=>{
+    swiper.destroy()
+      console.log('onUnmounted destroy swiper')
+  })
   </script>
   
   <style lang="scss" scoped>   
