@@ -48,11 +48,18 @@
       item.name = `肥宅快樂水-${item.ID}`
     })
     currentSlide.value = picList.value[0];
-    initSwiper();
-    console.log(picList.value)
-    console.log(swiper)
-    console.log('start')
+    // initSwiper();
   });
+  watch(picList.value, async (nV) => {
+    console.log(nV)
+    await nextTick()
+    console.log('nextTick')
+    initSwiper()
+    console.log(swiper)
+  },{
+    immediate: true,
+    deep:true
+  })
   function initSwiper(){   
     swiper = new Swiper('.swiper-container-test-announcement', {
       loop: false,
@@ -70,11 +77,11 @@
           currentSlide.value =  picList.value[swiper.activeIndex];
           //console.log(swiper)
         },
-      },
-      observer:true,
-      observeParents:true,
+      }
     });
     swiper.init();
+    console.log(swiper);
+    console.log('init');
   }
   onUnmounted(()=>{
     swiper.destroy()
